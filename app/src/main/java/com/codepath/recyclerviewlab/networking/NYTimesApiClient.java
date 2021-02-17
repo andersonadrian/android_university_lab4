@@ -1,5 +1,9 @@
 package com.codepath.recyclerviewlab.networking;
 
+import android.content.res.Resources;
+
+import com.codepath.recyclerviewlab.BuildConfig;
+import com.codepath.recyclerviewlab.R;
 import com.codepath.recyclerviewlab.models.Article;
 import com.codepath.recyclerviewlab.models.NYTimesArticlesAPIResponse;
 
@@ -10,6 +14,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.codepath.recyclerviewlab.R.string.api_keys;
 
 /**
  * This code represents the networking layer of the application,
@@ -27,7 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NYTimesApiClient {
 
     // TODO: Replace the below API key with your own generated key
-    private static final String API_KEY = "<YOUR-API-KEY-GOES-HERE>";
+    private static final String API_KEY = Resources.getSystem().getString(api_keys);
 
     // returns the
     private static final String API_FILTER = "headline, web_url, snippet, pub_date, word_count, print_page, print_section, section_name";
